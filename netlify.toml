@@ -1,0 +1,37 @@
+[build]
+  command = "npm run build"
+  publish = "dist/public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/api/create-invictus-checkout"
+  to = "/.netlify/functions/create-invictus-checkout"
+  status = 200
+
+[[redirects]]
+  from = "/webhook/invictuspay"
+  to = "/.netlify/functions/webhook-invictuspay"
+  status = 200
+
+[[redirects]]
+  from = "/api/demo-token"
+  to = "/.netlify/functions/demo-token"
+  status = 200
+
+[[redirects]]
+  from = "/api/validate-token"
+  to = "/.netlify/functions/validate-token"
+  status = 200
+
+[[redirects]]
+  from = "/api/download-synopsis"
+  to = "/.netlify/functions/download-synopsis"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

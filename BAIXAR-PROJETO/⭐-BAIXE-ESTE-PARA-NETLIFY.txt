@@ -1,0 +1,27 @@
+═══════════════════════════════════════════════════════════════
+  ⭐ ARQUIVO CORRETO PARA NETLIFY
+═══════════════════════════════════════════════════════════════
+
+📦 BAIXE ESTE ARQUIVO:
+   → enem-turbo-PRONTO-NETLIFY.zip (149 KB)
+
+═══════════════════════════════════════════════════════════════
+
+✅ ESTE ARQUIVO CONTÉM:
+   • index.html (na raiz)
+   • Pasta assets/ com CSS e JS
+   • Tudo buildado e pronto
+
+✅ COMO USAR:
+   1. Baixe enem-turbo-PRONTO-NETLIFY.zip
+   2. Extraia o ZIP no seu computador
+   3. Arraste a pasta extraída para netlify.com
+   4. Pronto! Seu site estará no ar
+
+═══════════════════════════════════════════════════════════════
+
+⚠️ ATENÇÃO:
+   O arquivo "enem-turbo-netlify.zip" é o código fonte.
+   Para Netlify, use "enem-turbo-PRONTO-NETLIFY.zip"!
+
+═══════════════════════════════════════════════════════════════

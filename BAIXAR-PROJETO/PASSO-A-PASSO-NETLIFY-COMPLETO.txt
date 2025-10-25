@@ -1,0 +1,251 @@
+═══════════════════════════════════════════════════════════════
+  🚀 PASSO A PASSO - DEPLOY NETLIFY COM PAGAMENTOS
+═══════════════════════════════════════════════════════════════
+
+✅ ESTE GUIA VAI TE ENSINAR A COLOCAR O SITE NO AR
+   COM CHECKOUT E PAGAMENTOS FUNCIONANDO!
+
+═══════════════════════════════════════════════════════════════
+  📋 PASSO 1: BAIXAR O PROJETO
+═══════════════════════════════════════════════════════════════
+
+1. Baixe o arquivo: enem-turbo-netlify.zip
+2. Extraia o ZIP em uma pasta no seu computador
+3. Você terá uma pasta com os arquivos do projeto
+
+═══════════════════════════════════════════════════════════════
+  🌐 PASSO 2: CRIAR CONTA NO GITHUB (se não tiver)
+═══════════════════════════════════════════════════════════════
+
+1. Acesse: https://github.com
+2. Clique em "Sign up"
+3. Crie sua conta grátis
+4. Confirme seu e-mail
+
+═══════════════════════════════════════════════════════════════
+  📦 PASSO 3: SUBIR PROJETO PARA O GITHUB
+═══════════════════════════════════════════════════════════════
+
+OPÇÃO A - PELO SITE DO GITHUB (MAIS FÁCIL):
+-------------------------------------------
+
+1. Entre no GitHub (https://github.com)
+
+2. Clique no botão verde "New" (criar repositório)
+
+3. Preencha:
+   - Repository name: enem-turbo
+   - Description: Site ENEM Turbo
+   - Deixe PUBLIC
+   - NÃO marque "Add README"
+   - Clique em "Create repository"
+
+4. Na página que abrir, clique em "uploading an existing file"
+
+5. ARRASTE TODOS OS ARQUIVOS da pasta extraída para lá
+   (client, server, shared, netlify, package.json, etc)
+
+6. Escreva na caixa: "Upload inicial do projeto"
+
+7. Clique em "Commit changes"
+
+8. Pronto! Código no GitHub ✅
+
+
+OPÇÃO B - PELA LINHA DE COMANDO (para quem sabe):
+-------------------------------------------------
+
+1. Abra o terminal na pasta do projeto
+
+2. Execute os comandos:
+
+   git init
+   git add .
+   git commit -m "Projeto inicial"
+   git branch -M main
+   git remote add origin https://github.com/SEU-USUARIO/enem-turbo.git
+   git push -u origin main
+
+═══════════════════════════════════════════════════════════════
+  🌍 PASSO 4: CRIAR CONTA NA NETLIFY
+═══════════════════════════════════════════════════════════════
+
+1. Acesse: https://www.netlify.com
+
+2. Clique em "Sign up"
+
+3. Escolha "Sign up with GitHub"
+
+4. Autorize a Netlify a acessar seus repositórios
+
+5. Pronto! Conta criada ✅
+
+═══════════════════════════════════════════════════════════════
+  🚀 PASSO 5: FAZER DEPLOY DO PROJETO
+═══════════════════════════════════════════════════════════════
+
+1. No painel da Netlify, clique em "Add new site"
+
+2. Selecione "Import an existing project"
+
+3. Escolha "Deploy with GitHub"
+
+4. Selecione o repositório "enem-turbo"
+
+5. Configure o build:
+
+   Build command: npm run build
+   Publish directory: dist/public
+   Functions directory: netlify/functions
+
+6. Clique em "Deploy site"
+
+7. Aguarde o deploy (2-3 minutos)
+
+8. Pronto! Site no ar ✅
+
+═══════════════════════════════════════════════════════════════
+  🔑 PASSO 6: CONFIGURAR VARIÁVEIS DE AMBIENTE
+═══════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: Sem isso os pagamentos NÃO funcionam!
+
+1. No painel da Netlify, vá em:
+   Site settings → Environment variables
+
+2. Clique em "Add a variable"
+
+3. Adicione CADA UMA destas variáveis:
+
+   Nome: DATABASE_URL
+   Valor: (URL do seu banco PostgreSQL - veja passo 7)
+   
+   Nome: INVICTUS_LINK_BASICO
+   Valor: https://go.invictuspay.app.br/zxc1otywq0
+   
+   Nome: INVICTUS_LINK_COMPLETO
+   Valor: https://go.invictuspay.app.br/zglneku5mq
+   
+   Nome: INVICTUS_LINK_PREMIUM
+   Valor: https://go.invictuspay.app.br/fzc2zrighx
+   
+   Nome: INVICTUS_LINK_REDACAO
+   Valor: https://go.invictuspay.app.br/8dend2jf4c
+   
+   Nome: INVICTUS_LINK_BASICO_REDACAO
+   Valor: https://go.invictuspay.app.br/im9mxwl3q4
+   
+   Nome: INVICTUS_LINK_COMPLETO_REDACAO
+   Valor: https://go.invictuspay.app.br/9xvryf3mcq
+   
+   Nome: INVICTUS_LINK_PREMIUM_REDACAO
+   Valor: https://go.invictuspay.app.br/eanzct8ela
+
+4. Clique em "Save" depois de adicionar cada variável
+
+5. Clique em "Trigger deploy" → "Deploy site"
+
+═══════════════════════════════════════════════════════════════
+  🗄️ PASSO 7: CONFIGURAR BANCO DE DADOS (PostgreSQL)
+═══════════════════════════════════════════════════════════════
+
+1. Acesse: https://neon.tech (banco grátis PostgreSQL)
+
+2. Clique em "Sign up"
+
+3. Faça login com GitHub
+
+4. Clique em "Create a project"
+
+5. Escolha:
+   - Project name: enem-turbo
+   - PostgreSQL version: 16
+   - Region: US East (Ohio)
+
+6. Clique em "Create project"
+
+7. Na página que abrir, COPIE a "Connection string"
+   Exemplo: postgresql://user:pass@host/database
+
+8. VOLTE para a Netlify (Passo 6)
+
+9. Adicione a variável DATABASE_URL com essa string
+
+10. Pronto! Banco configurado ✅
+
+═══════════════════════════════════════════════════════════════
+  🔔 PASSO 8: CONFIGURAR WEBHOOK DA INVICTUS PAY
+═══════════════════════════════════════════════════════════════
+
+1. Copie a URL do seu site na Netlify
+   Exemplo: https://seu-site.netlify.app
+
+2. Entre no painel da Invictus Pay
+
+3. Configure o webhook:
+   URL: https://seu-site.netlify.app/webhook/invictuspay
+
+4. Eventos: Marque "Pagamento aprovado"
+
+5. Salve
+
+6. Pronto! Webhook configurado ✅
+
+═══════════════════════════════════════════════════════════════
+  ✅ PASSO 9: TESTAR SE ESTÁ FUNCIONANDO
+═══════════════════════════════════════════════════════════════
+
+1. Acesse seu site: https://seu-site.netlify.app
+
+2. Clique em "Quero meus packs agora"
+
+3. Escolha um plano
+
+4. Clique em "Comprar agora"
+
+5. Você deve ser redirecionado para a Invictus Pay ✅
+
+6. Faça um teste de pagamento
+
+7. Verifique se recebe o e-mail com o link de download
+
+═══════════════════════════════════════════════════════════════
+  🎉 PRONTO! SEU SITE ESTÁ NO AR COM PAGAMENTOS!
+═══════════════════════════════════════════════════════════════
+
+✅ Checkout funcionando
+✅ Pagamentos via Invictus Pay
+✅ E-mails automáticos
+✅ Download de materiais
+✅ Tudo 100% funcional!
+
+═══════════════════════════════════════════════════════════════
+  ⚠️ PROBLEMAS COMUNS E SOLUÇÕES
+═══════════════════════════════════════════════════════════════
+
+❌ "Erro ao criar checkout"
+   → Verifique se configurou todas as variáveis de ambiente
+
+❌ "Database error"
+   → Verifique se o DATABASE_URL está correto
+
+❌ "Pagamento não aparece"
+   → Verifique se o webhook está configurado
+
+❌ "Functions não funcionam"
+   → Verifique se o Functions directory está como netlify/functions
+
+═══════════════════════════════════════════════════════════════
+  📞 PRECISA DE AJUDA?
+═══════════════════════════════════════════════════════════════
+
+1. Verifique os logs na Netlify:
+   Functions → Ver logs de cada function
+
+2. Verifique o console do navegador (F12)
+
+3. Teste as variáveis de ambiente
+
+═══════════════════════════════════════════════════════════════
+
+Boas vendas! 💰🚀

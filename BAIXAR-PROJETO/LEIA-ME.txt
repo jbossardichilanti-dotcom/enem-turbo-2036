@@ -1,0 +1,59 @@
+═══════════════════════════════════════════════════════════════
+  📦 PROJETO PRONTO PARA NETLIFY - ENEM TURBO
+═══════════════════════════════════════════════════════════════
+
+✅ COMO BAIXAR:
+   1. Clique no arquivo "enem-turbo-limpo-netlify.zip"
+   2. Clique nos 3 pontinhos (...)
+   3. Selecione "Download"
+
+✅ TAMANHO: 1.4 MB (super leve!)
+
+✅ O QUE ESTÁ INCLUÍDO:
+   • Frontend React completo
+   • Backend Express
+   • Netlify Functions (pagamentos)
+   • Configuração netlify.toml
+   • Integração Invictus Pay
+   • Sistema de checkout funcionando
+
+═══════════════════════════════════════════════════════════════
+  🚀 PRÓXIMOS PASSOS APÓS BAIXAR
+═══════════════════════════════════════════════════════════════
+
+1. EXTRAIR O ZIP
+   - Descompacte o arquivo no seu computador
+
+2. INSTALAR DEPENDÊNCIAS
+   npm install
+
+3. DEPLOY NA NETLIFY
+   Opção A: Conecte o repositório no GitHub → Netlify
+   Opção B: Use Netlify CLI
+      npm install -g netlify-cli
+      netlify deploy --prod
+
+4. CONFIGURAR VARIÁVEIS DE AMBIENTE (no painel da Netlify)
+   DATABASE_URL=sua_url_postgresql
+   INVICTUS_LINK_BASICO=https://go.invictuspay.app.br/...
+   INVICTUS_LINK_COMPLETO=https://go.invictuspay.app.br/...
+   INVICTUS_LINK_PREMIUM=https://go.invictuspay.app.br/...
+   INVICTUS_LINK_REDACAO=https://go.invictuspay.app.br/...
+
+═══════════════════════════════════════════════════════════════
+  ✨ CARACTERÍSTICAS DO PROJETO
+═══════════════════════════════════════════════════════════════
+
+✓ Projeto limpo (sem arquivos desnecessários)
+✓ Otimizado para Netlify
+✓ Pagamentos via Invictus Pay
+✓ Webhooks configurados
+✓ Database PostgreSQL (Neon)
+✓ Responsivo (mobile + desktop)
+
+═══════════════════════════════════════════════════════════════
+
+Qualquer dúvida, consulte o arquivo netlify.toml para ver
+as configurações de deploy.
+
+Bons estudos! 🎓

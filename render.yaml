@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: enem-turbo-2025
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: INVICTUS_LINK_BASICO
+        value: https://go.invictuspay.app.br/zxc1otywq0
+      - key: INVICTUS_LINK_COMPLETO
+        value: https://go.invictuspay.app.br/zglneku5mq
+      - key: INVICTUS_LINK_PREMIUM
+        value: https://go.invictuspay.app.br/fzc2zrighx
+      - key: INVICTUS_LINK_REDACAO
+        value: https://go.invictuspay.app.br/8dend2jf4c
+      - key: INVICTUS_LINK_PREMIUM_REDACAO
+        value: https://go.invictuspay.app.br/eanzct8ela
