@@ -127,10 +127,10 @@ export default function HeroSection() {
                       <Button
                         key={index}
                         onClick={() => handleAnswer(option.value)}
-                        className="w-full bg-white/10 hover:bg-white/20 border border-white/30 text-white justify-start text-left h-auto py-4 px-6"
+                        className="w-full bg-white/10 hover:bg-white/20 border border-white/30 text-white justify-start text-left h-auto py-4 px-6 whitespace-normal break-words min-h-[3.5rem]"
                         data-testid={`quiz-option-${index}`}
                       >
-                        {option.text}
+                        <span className="block">{option.text}</span>
                       </Button>
                     ))}
                   </div>
