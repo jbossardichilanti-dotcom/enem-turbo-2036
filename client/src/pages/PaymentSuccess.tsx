@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Download, BookOpen } from "lucide-react";
 import { useLocation } from "wouter";
 import { useEffect } from "react";
+import { trackPurchase } from "@/lib/fbPixel";
 
 export default function PaymentSuccess() {
   const [, setLocation] = useLocation();
@@ -12,6 +13,8 @@ export default function PaymentSuccess() {
   useEffect(() => {
     if (!token) {
       setLocation("/");
+    } else {
+      trackPurchase();
     }
   }, [token, setLocation]);
 

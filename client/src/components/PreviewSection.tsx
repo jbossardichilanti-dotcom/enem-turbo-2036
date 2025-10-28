@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { FileText, Download, CheckCircle } from "lucide-react";
+import { trackInitiateCheckout } from "@/lib/fbPixel";
 
 export default function PreviewSection() {
   const scrollToInscricao = () => {
+    trackInitiateCheckout();
     const element = document.getElementById('inscricao');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

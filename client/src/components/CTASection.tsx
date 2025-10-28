@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useLocation } from "wouter";
 import { CheckCircle, Clock } from "lucide-react";
+import { trackInitiateCheckout } from "@/lib/fbPixel";
 
 export default function CTASection() {
   const [timeLeft, setTimeLeft] = useState({
@@ -46,6 +47,7 @@ export default function CTASection() {
   }, []);
 
   const handleDirectPurchase = () => {
+    trackInitiateCheckout();
     setLocation("/checkout");
   };
 

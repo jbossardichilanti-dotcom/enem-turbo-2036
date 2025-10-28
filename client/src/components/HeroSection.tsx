@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { GraduationCap, CheckCircle, TrendingUp } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { trackInitiateCheckout, trackViewContent } from "@/lib/fbPixel";
 
 const quizQuestions = [
   {
@@ -36,6 +37,10 @@ export default function HeroSection() {
   const [answers, setAnswers] = useState<string[]>([]);
   const [showResult, setShowResult] = useState(false);
 
+  useEffect(() => {
+    trackViewContent();
+  }, []);
+
   const handleAnswer = (value: string) => {
     const newAnswers = [...answers, value];
     setAnswers(newAnswers);
@@ -48,6 +53,7 @@ export default function HeroSection() {
   };
 
   const scrollToInscricao = () => {
+    trackInitiateCheckout();
     const element = document.getElementById('inscricao');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
